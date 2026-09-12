@@ -167,6 +167,27 @@ Gunakan konstanta `EVENT_TYPES`; jangan menulis string event manual.
 - Saat halaman ditutup atau tab disembunyikan, queue menggunakan beacon agar navigasi tidak tertahan.
 - Pengiriman yang gagal dicoba sekali, lalu dilepas agar UX pengguna tidak terganggu.
 
+## Aset gambar dan video
+
+Semua media landing page disimpan di `resources/assets/` dan dipanggil lewat helper `asset()`, bukan dari `public/`. Vite yang mem-bundle, memberi hash, dan menulis ulang URL-nya saat build sehingga cache busting berjalan otomatis.
+
+```tsx
+import { asset } from '@/lib/assets';
+
+<img src={asset('hero-consultant.png')} alt="Konsultan" />
+```
+
+Untuk `background-image`, pakai inline style karena kelas Tailwind tidak bisa memuat ekspresi JavaScript:
+
+```tsx
+<div
+    className="[background-size:cover] [background-position:center]"
+    style={{ backgroundImage: `url(${asset('unair.png')})` }}
+/>
+```
+
+Nama file yang tidak ada di `resources/assets/` menghasilkan string kosong dan peringatan di console saat development, bukan build yang gagal.
+
 ## Checklist setelah wiring
 
 - Setiap CTA memiliki zone, action, dan label yang benar.

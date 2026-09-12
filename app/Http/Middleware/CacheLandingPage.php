@@ -24,7 +24,12 @@ class CacheLandingPage
         }
 
         $pathKey = str_replace('/', '_', $request->path());
-        $cacheKey = 'landing_page_html_'.config('analytics.mode')."_{$pathKey}:".self::manifestVersion();
+
+        // The pricing variant is chosen by ?mode=tutor, so it has to be part of
+        // the key. Only this parameter is included: keying on the whole query
+        // string would fragment the cache across every utm_* and fbclid value.
+        $variant = $request->query('mode') === 'tutor' ? 'tutor' : 'self';
+        $cacheKey = 'landing_page_html_'.config('analytics.mode')."_{$pathKey}_{$variant}:".self::manifestVersion();
 
         if (Cache::has($cacheKey)) {
             /** @var string $html */

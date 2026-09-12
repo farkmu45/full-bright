@@ -4,7 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @if (str_starts_with($page['component'] ?? '', 'demo/'))
+        <meta name="description" content="Persiapkan TOEFL 500+ dalam 15 hari dengan metode belajar terstruktur dari Full Bright Indonesia. Sudah membantu 45.000+ alumni meraih beasiswa &amp; CPNS. Mulai dari Rp99rb.">
+    @endif
     <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preload" href="/logo/Logo-Fullbright.webp" as="image" type="image/webp" fetchpriority="high">
 
     <script>
         window.__META_PAGE_VIEW_EVENT_ID = window.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`;
@@ -56,11 +62,18 @@
         })();
     </script>
 
-    @fonts
+    {{-- The landing page uses Nunito via its own styles and, like production, loads no web fonts. --}}
+    @unless (str_starts_with($page['component'] ?? '', 'demo/'))
+        @fonts
+    @endunless
     @viteReactRefresh
     @vite(['resources/css/app.css', 'resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
     <x-inertia::head>
-        <title>{{ config('app.name', 'PBM Landing Page Boilerplate') }}</title>
+        @if (str_starts_with($page['component'] ?? '', 'demo/'))
+            <title>Kelas TOEFL Skor 500+ untuk Submission Beasiswa dan Kerja</title>
+        @else
+            <title>{{ config('app.name', 'PBM Landing Page Boilerplate') }}</title>
+        @endif
     </x-inertia::head>
 </head>
 <body class="font-sans antialiased">
