@@ -67,17 +67,20 @@ export class AnalyticsQueue {
     }
 
     private sendBeacon(events: QueuedEvent[]): void {
-        const body = JSON.stringify({ _token: csrfToken(), events });
-        const blob = new Blob([body], { type: 'application/json' });
-
-        if (!navigator.sendBeacon('/analytics/track', blob)) {
-            void fetch('/analytics/track', {
-                method: 'POST',
-                body,
-                keepalive: true,
-                headers: { 'Content-Type': 'application/json' },
-            });
-        }
+        // A keepalive fetch outlives the page like navigator.sendBeacon, but
+        // it can carry the CSRF header. Over plain HTTP browsers omit
+        // Sec-Fetch-Site, so Laravel only accepts the header token there.
+        void fetch('/analytics/track', {
+            method: 'POST',
+            body: JSON.stringify({ events }),
+            keepalive: true,
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken(),
+                Accept: 'application/json',
+            },
+        }).catch(() => undefined);
     }
 
     private async post(events: QueuedEvent[]): Promise<boolean> {

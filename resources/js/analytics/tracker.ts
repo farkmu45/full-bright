@@ -139,22 +139,23 @@ export function sendHeartbeat(
     const csrf =
         document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]')
             ?.content ?? '';
-    const body = JSON.stringify({
-        _token: csrf,
-        duration_seconds: durationSeconds,
-        max_scroll_depth: maxScrollDepth,
-        landing_source: landingSource(),
-    });
-    const blob = new Blob([body], { type: 'application/json' });
-
-    if (!navigator.sendBeacon('/analytics/heartbeat', blob)) {
-        void fetch('/analytics/heartbeat', {
-            method: 'POST',
-            body,
-            keepalive: true,
-            headers: { 'Content-Type': 'application/json' },
-        });
-    }
+    // Keepalive fetch instead of sendBeacon so the CSRF header is sent; see
+    // AnalyticsQueue::sendBeacon.
+    void fetch('/analytics/heartbeat', {
+        method: 'POST',
+        body: JSON.stringify({
+            duration_seconds: durationSeconds,
+            max_scroll_depth: maxScrollDepth,
+            landing_source: landingSource(),
+        }),
+        keepalive: true,
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrf,
+            Accept: 'application/json',
+        },
+    }).catch(() => undefined);
 }
 
 export function rememberScrollDepth(depth: number): void {
