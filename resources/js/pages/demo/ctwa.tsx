@@ -629,7 +629,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="nav"
                                     action="scroll"
-                                    label="Link pricing"
+                                    label="Amankan Seat"
                                     href="#pricing"
                                     className="[display:flex] [flex-direction:column] [justify-content:center] [gap:1px] [border-radius:9999px] [padding:7px_16px] [box-shadow:0_6px_16px_rgba(215,8,8,0.35)] [background:#D70808] [text-decoration:none]"
                                 >
@@ -753,7 +753,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                             <TrackedCTA
                                                 zone="hero"
                                                 action="scroll"
-                                                label="Mulai Persiapan TOEFL \u2192"
+                                                label="Mulai Persiapan TOEFL →"
                                                 href="#pricing"
                                                 className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#fff] [box-shadow:0_4px_20px_rgba(215,8,8,0.35)] [background:#D70808] [text-decoration:none] max-[500px]:[box-sizing:border-box] max-[500px]:[width:100%] max-[500px]:[padding:clamp(10px,3vw,14px)_clamp(16px,5vw,28px)] max-[500px]:[font-size:clamp(12px,3.6vw,16px)]"
                                             >
@@ -762,7 +762,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                             <TrackedCTA
                                                 zone="hero"
                                                 action="scroll"
-                                                label="Lihat Bukti Alumni \u2192"
+                                                label="Lihat Bukti Alumni →"
                                                 href="#testimonials"
                                                 className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#151515] [border:2px_solid_#D70808] [text-decoration:none] max-[500px]:[box-sizing:border-box] max-[500px]:[width:100%] max-[500px]:[padding:clamp(10px,3vw,14px)_clamp(16px,5vw,28px)] max-[500px]:[font-size:clamp(12px,3.6vw,16px)]"
                                             >
@@ -1460,7 +1460,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="midpage"
                                     action="scroll"
-                                    label="Gabung Sekarang \u2192"
+                                    label="Gabung Sekarang →"
                                     href="#pricing"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#fff] [box-shadow:0_4px_20px_rgba(215,8,8,0.35)] [background:#D70808] [text-decoration:none]"
                                 >
@@ -1469,7 +1469,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="midpage"
                                     action="scroll"
-                                    label="Lihat Bukti Alumni \u2192"
+                                    label="Lihat Bukti Alumni →"
                                     href="#testimonials"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#151515] [border:2px_solid_#D70808] [text-decoration:none]"
                                 >
@@ -1571,7 +1571,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="midpage"
                                     action="scroll"
-                                    label="Gabung Sekarang \u2192"
+                                    label="Gabung Sekarang →"
                                     href="#pricing"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#fff] [box-shadow:0_4px_20px_rgba(215,8,8,0.35)] [background:#D70808] [text-decoration:none]"
                                 >
@@ -1580,7 +1580,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="midpage"
                                     action="scroll"
-                                    label="Lihat Lebih Banyak Bukti \u2192"
+                                    label="Lihat Lebih Banyak Bukti →"
                                     href="#testimonials"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#151515] [border:2px_solid_#D70808] [text-decoration:none]"
                                 >
@@ -2079,7 +2079,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="midpage"
                                     action="scroll"
-                                    label="Gabung Sekarang \u2192"
+                                    label="Gabung Sekarang →"
                                     href="#pricing"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#fff] [box-shadow:0_4px_20px_rgba(215,8,8,0.35)] [background:#D70808] [text-decoration:none]"
                                 >
@@ -2088,7 +2088,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="midpage"
                                     action="scroll"
-                                    label="Lihat Bukti Alumni \u2192"
+                                    label="Lihat Bukti Alumni →"
                                     href="#testimonials"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#151515] [border:2px_solid_#D70808] [text-decoration:none]"
                                 >
@@ -2217,7 +2217,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="midpage"
                                     action="scroll"
-                                    label="Gabung Sekarang \u2192"
+                                    label="Gabung Sekarang →"
                                     href="#pricing"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#fff] [box-shadow:0_4px_20px_rgba(215,8,8,0.35)] [background:#D70808] [text-decoration:none]"
                                 >
@@ -2226,7 +2226,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="midpage"
                                     action="scroll"
-                                    label="Lihat Bukti Alumni \u2192"
+                                    label="Lihat Bukti Alumni →"
                                     href="#testimonials"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#151515] [border:2px_solid_#D70808] [text-decoration:none]"
                                 >
@@ -3123,7 +3123,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="midpage"
                                     action="scroll"
-                                    label="Gabung Sekarang \u2192"
+                                    label="Gabung Sekarang →"
                                     href="#pricing"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#fff] [box-shadow:0_4px_20px_rgba(215,8,8,0.35)] [background:#D70808] [text-decoration:none]"
                                 >
@@ -3369,7 +3369,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                             <TrackedCTA
                                                 zone="pricing"
                                                 action="external_checkout"
-                                                label="Mulai Belajar Mandiri \u2192"
+                                                label="Mulai Belajar Mandiri →"
                                                 href="https://member.fullbrightindonesia.com/paket-gold-e-course-toefl"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -3395,7 +3395,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                         <TrackedCTA
                                             zone="pricing"
                                             action="whatsapp"
-                                            label="\uD83D\uDCAC Tanya via WhatsApp"
+                                            label="💬 Tanya via WhatsApp"
                                             href="https://wa.me/6285255499299?text=Halo%20Admin%20Full%20Bright%20Indonesia.%20Saya%20minat%20mau%20daftar%20E-Course%20Self-Study%20LMS."
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -3685,7 +3685,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                             <TrackedCTA
                                                 zone="pricing"
                                                 action="external_checkout"
-                                                label="Apply Sekarang \u2192"
+                                                label="Apply Sekarang →"
                                                 href="https://member.fullbrightindonesia.com/paket-premium-toefl-level-starter-live-zoom-intensif-flash-sale"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -3711,7 +3711,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                         <TrackedCTA
                                             zone="pricing"
                                             action="whatsapp"
-                                            label="\uD83D\uDCAC Tanya via WhatsApp"
+                                            label="💬 Tanya via WhatsApp"
                                             href="https://wa.me/6285255499299?text=Halo%20Admin%20Full%20Bright%20Indonesia.%20Saya%20minat%20mau%20daftar%20kelas%20TOEFL%20Level%20Starter"
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -3970,7 +3970,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                             <TrackedCTA
                                                 zone="pricing"
                                                 action="external_checkout"
-                                                label="Apply Sekarang \u2192"
+                                                label="Apply Sekarang →"
                                                 href="https://member.fullbrightindonesia.com/paket-premium-toefl-level-starter-live-zoom-intensif-flash-sale"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -3999,7 +3999,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                         <TrackedCTA
                                             zone="pricing"
                                             action="whatsapp"
-                                            label="\uD83D\uDCAC Tanya via WhatsApp"
+                                            label="💬 Tanya via WhatsApp"
                                             href="https://wa.me/6285255499299?text=Halo%20Admin%20Full%20Bright%20Indonesia.%20Saya%20minat%20mau%20daftar%20paket%20HEMAT%20TOEFL%20Level%20Starter%20%2B%20Intermediate."
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -4191,7 +4191,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                             <TrackedCTA
                                                 zone="pricing"
                                                 action="external_checkout"
-                                                label="Apply Sekarang \u2192"
+                                                label="Apply Sekarang →"
                                                 href="https://member.fullbrightindonesia.com/paket-premium-toefl-level-intermediate-live-zoom-intensif-flash-sale"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -4217,7 +4217,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                         <TrackedCTA
                                             zone="pricing"
                                             action="whatsapp"
-                                            label="\uD83D\uDCAC Tanya via WhatsApp"
+                                            label="💬 Tanya via WhatsApp"
                                             href="https://wa.me/6285255499299?text=Halo%20Admin%20Full%20Bright%20Indonesia.%20Saya%20minat%20mau%20daftar%20kelas%20TOEFL%20Level%20Intermediate."
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -4274,7 +4274,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                     <TrackedCTA
                                         zone="pricing"
                                         action="link"
-                                        label="Info Detail Legalitas \u2192"
+                                        label="Info Detail Legalitas →"
                                         href="https://referensi.data.kemendikdasmen.go.id/pendidikan/npsn/K9998700"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -4998,7 +4998,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="faq"
                                     action="whatsapp"
-                                    label="Chat Via WA \u2192"
+                                    label="Chat Via WA →"
                                     href="https://wa.me/6285255499299?text=Halo%20Admin%20Full%20Bright%20Indonesia.%20Saya%20minat%20mau%20daftar%20kelas%20TOEFL.%20Saya%20mau%20tanya-tanya%20dulu."
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -5010,7 +5010,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                 <TrackedCTA
                                     zone="faq"
                                     action="scroll"
-                                    label="Lihat Bukti Alumni \u2192"
+                                    label="Lihat Bukti Alumni →"
                                     href="#testimonials"
                                     className="[display:inline-flex] [align-items:center] [justify-content:center] [gap:8px] [border-radius:16px] [padding:14px_28px] [font-size:16px] [font-weight:700] [color:#151515] [border:2px_solid_#D70808] [text-decoration:none]"
                                 >
@@ -5150,7 +5150,7 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                     <TrackedCTA
                                         zone="footer"
                                         action="link"
-                                        label="Link"
+                                        label="Instagram"
                                         href="https://www.instagram.com/fulbrightindonesia/"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -5358,8 +5358,8 @@ export default function LandingPage({ pricingMode }: LandingPageProps) {
                                     <>
                                         <TrackedCTA
                                             zone="floating"
-                                            action="link"
-                                            label="\uD83D\uDCAC Konsultasi via WhatsApp \u2192"
+                                            action="whatsapp"
+                                            label="💬 Konsultasi via WhatsApp →"
                                             href={waUrl(
                                                 RETURN_WA_MSGS[rpSelected ?? 0],
                                             )}

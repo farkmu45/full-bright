@@ -9,11 +9,23 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Server-side HTML cache for the public landing pages.
+ *
+ * The rendered HTML carries per-visitor values: the CSRF token the tracker
+ * sends to /analytics/track, the pbm_vid visitor id and the request URI.
+ * They are swapped for placeholders before caching and filled back in for
+ * every request, otherwise all visitors would share the first visitor's
+ * token (every tracking request fails with 419) and visitor id.
  */
 class CacheLandingPage
 {
     // Caches the page for 7 days
     private const TTL_SECONDS = 604800;
+
+    private const CSRF_PLACEHOLDER = '__PBM_CSRF_TOKEN__';
+
+    private const VISITOR_PLACEHOLDER = '__PBM_VISITOR_ID__';
+
+    private const URL_PLACEHOLDER = '"__PBM_REQUEST_URI__"';
 
     public function handle(Request $request, Closure $next): Response
     {
@@ -35,17 +47,42 @@ class CacheLandingPage
             /** @var string $html */
             $html = Cache::get($cacheKey);
 
-            return response($html, 200, ['Content-Type' => 'text/html; charset=UTF-8']);
+            return response(self::personalize($html, $request), 200, ['Content-Type' => 'text/html; charset=UTF-8']);
         }
 
         /** @var Response $response */
         $response = $next($request);
 
         if ($response->getStatusCode() === 200) {
-            Cache::put($cacheKey, $response->getContent(), self::TTL_SECONDS);
+            Cache::put($cacheKey, self::anonymize((string) $response->getContent(), $request), self::TTL_SECONDS);
         }
 
         return $response;
+    }
+
+    private static function anonymize(string $html, Request $request): string
+    {
+        $replacements = [
+            csrf_token() => self::CSRF_PLACEHOLDER,
+            json_encode($request->getRequestUri()) => self::URL_PLACEHOLDER,
+        ];
+
+        $visitorId = $request->attributes->get('pbm_visitor_id');
+
+        if (is_string($visitorId) && $visitorId !== '') {
+            $replacements[$visitorId] = self::VISITOR_PLACEHOLDER;
+        }
+
+        return strtr($html, $replacements);
+    }
+
+    private static function personalize(string $html, Request $request): string
+    {
+        return strtr($html, [
+            self::CSRF_PLACEHOLDER => csrf_token(),
+            self::VISITOR_PLACEHOLDER => (string) $request->attributes->get('pbm_visitor_id'),
+            self::URL_PLACEHOLDER => json_encode($request->getRequestUri(), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT),
+        ]);
     }
 
     private static function manifestVersion(): string
